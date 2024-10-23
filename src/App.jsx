@@ -5,7 +5,20 @@ import TodoForm from './components/TodoForm.jsx';
 
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    //check if user has preferred mode else use systems settings
+    return savedMode ? JSON.parse(savedMode) : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+  // Apply dark mode
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkMode);
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  function toggleDarkMode() {
+    setDarkMode(prev => !prev);
+  }
 
   const [newTodo, setNewTodo] = useState('');
   const [error, setError] = useState('');

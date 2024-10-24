@@ -2,7 +2,7 @@
 
 A feature-rich Todo application built with React, featuring a clean UI, dark mode support, and persistent storage. The application showcases modern React practices and Tailwind CSS for styling.
 
-![Todo App Screenshot]
+
 ![image](https://github.com/user-attachments/assets/897dded3-bd7a-4949-89df-b0f778cb9739)
 
 

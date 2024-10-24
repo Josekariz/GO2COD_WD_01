@@ -167,5 +167,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📧 Contact
 
 Your Name - [sejokarizz@gmail.com]
-Project Link: [https://github.com/yourusername/todo-app](https://github.com/Josekariz/GO2COD_WD_01.git)]
+Project Link: [https://github.com/TodoInit](https://github.com/Josekariz/GO2COD_WD_01.git)]
 

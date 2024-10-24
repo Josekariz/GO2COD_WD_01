@@ -56,6 +56,12 @@ function App() {
   }
 
 
+  function deleteTodo(todoId) {
+    setTodos(currentTodos =>
+      currentTodos.filter(todo => todo.id !== todoId)
+    );
+  }
+
 
   return (
     <div className={`min-h-screen transition-colors duration-500 ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'
@@ -75,7 +81,7 @@ function App() {
           todos={todos}
           toggleComplete={() => { }}
           onEdit={() => { }}
-          onDelete={() => { }}
+          onDelete={deleteTodo}
           darkMode={darkMode}
         />
       </div>

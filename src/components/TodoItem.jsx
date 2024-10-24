@@ -50,8 +50,7 @@ function TodoItem({ todo, toggleComplete, onEdit, onDelete, darkMode }) {
                     </button>
                     <button
                         onClick={() => onDelete(todo.id)}
-                        className={`p-1 
-                            ${darkMode
+                        className={`p-1 ${darkMode
                                 ? 'text-gray-400 hover:text-red-400'
                                 : 'text-gray-600 hover:text-red-500'
                             }`}

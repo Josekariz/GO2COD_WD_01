@@ -73,6 +73,33 @@ function App() {
     );
   }
 
+  //edit logic 
+  const [editingTodo, setEditingTodo] = useState(null);
+
+  function startEdit(todo) {
+    setEditingTodo({ ...todo });
+  }
+
+  function updateTodo(id, newText) {
+    if (!newText.trim()) {
+      return;
+    }
+
+    setTodos(currentTodos =>
+      currentTodos.map(todo =>
+        todo.id === id
+          ? { ...todo, text: newText.trim() }
+          : todo
+      )
+    );
+    setEditingTodo(null);
+  }
+
+  function cancelEdit() {
+    setEditingTodo(null);
+  }
+
+
 
   return (
     <div className={`min-h-screen transition-colors duration-500 ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'
@@ -91,8 +118,11 @@ function App() {
         <TodoList
           todos={todos}
           toggleComplete={toggleComplete}
-          onEdit={() => { }}
+          onEdit={startEdit}
           onDelete={deleteTodo}
+          editingTodo={editingTodo}
+          onUpdateTodo={updateTodo}
+          onCancelEdit={cancelEdit}
           darkMode={darkMode}
         />
       </div>

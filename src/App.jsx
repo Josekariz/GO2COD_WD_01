@@ -55,10 +55,21 @@ function App() {
     setError('');
   }
 
-
+  //delete a todo
   function deleteTodo(todoId) {
     setTodos(currentTodos =>
       currentTodos.filter(todo => todo.id !== todoId)
+    );
+  }
+
+  // toggle completion
+  function toggleComplete(todoId) {
+    setTodos(currentTodos =>
+      currentTodos.map(todo =>
+        todo.id === todoId
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      )
     );
   }
 
@@ -79,7 +90,7 @@ function App() {
 
         <TodoList
           todos={todos}
-          toggleComplete={() => { }}
+          toggleComplete={toggleComplete}
           onEdit={() => { }}
           onDelete={deleteTodo}
           darkMode={darkMode}

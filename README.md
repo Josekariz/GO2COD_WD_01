@@ -1,70 +1,171 @@
-# Getting Started with Create React App
+# Modern React Todo Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A feature-rich Todo application built with React, featuring a clean UI, dark mode support, and persistent storage. The application showcases modern React practices and Tailwind CSS for styling.
 
-## Available Scripts
+![Todo App Screenshot]
+![image](https://github.com/user-attachments/assets/897dded3-bd7a-4949-89df-b0f778cb9739)
 
-In the project directory, you can run:
 
-### `npm start`
+## 🌟 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Task Management**
+  - Create, read, update, and delete tasks
+  - Mark tasks as complete/incomplete
+  - Inline editing of tasks
+  - Persistent storage using localStorage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **User Interface**
+  - Clean and modern design
+  - Responsive layout
+  - Smooth animations and transitions
+  - Dark mode support with system preference detection
+  - Hover effects and intuitive interactions
 
-### `npm test`
+- **Accessibility**
+  - ARIA labels for better screen reader support
+  - Keyboard navigation
+  - High contrast mode support
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Technical Stack
 
-### `npm run build`
+- **React** - Frontend library
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Icon library
+- **localStorage** - Persistent data storage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+```bash
+git clone [https://github.com/Josekariz/GO2COD_WD_01.git]
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Navigate to the project directory:
+```bash
+cd todo-app
+```
 
-### `npm run eject`
+3. Install dependencies:
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the development server:
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Adding a Task
+1. Type your task in the input field
+2. Click the "Add Task" button or press Enter
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Editing a Task
+1. Hover over a task to reveal the edit button
+2. Click the edit (pencil) icon
+3. Make your changes
+4. Press Enter to save or Escape to cancel
 
-## Learn More
+### Completing a Task
+- Click the checkbox next to the task to toggle completion status
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Deleting a Task
+1. Hover over a task to reveal the delete button
+2. Click the delete (trash) icon
+3. The task will be permanently removed
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Dark Mode
+- Click the theme toggle button in the header to switch between light and dark modes
+- The app will remember your preference
 
-### Code Splitting
+## 🏗️ Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+src/
+├── components/
+│   ├── Header.js
+│   ├── TodoForm.js
+│   ├── TodoList.js
+│   └── TodoItem.js
+├── App.js
+└── index.js
+```
 
-### Analyzing the Bundle Size
+### Component Overview
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **App.js**: Main component handling state and data persistence
+- **Header.js**: Contains the app title and theme toggle
+- **TodoForm.js**: Handles new todo input and submission
+- **TodoList.js**: Renders the list of todos
+- **TodoItem.js**: Individual todo item with edit/delete capabilities
 
-### Making a Progressive Web App
+## 💾 Local Storage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The application uses localStorage to persist:
+- Todo items
+- Dark mode preference
 
-### Advanced Configuration
+Data structure for todos:
+```javascript
+{
+  id: number,
+  text: string,
+  completed: boolean,
+  createdAt: string (ISO date)
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🎨 Styling
 
-### Deployment
+The application uses Tailwind CSS with a custom configuration supporting:
+- Dark mode classes
+- Custom transitions
+- Responsive design
+- Hover states
+- Focus states
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔍 State Management
 
-### `npm run build` fails to minify
+The application uses React's useState and useEffect hooks for:
+- Managing todo items
+- Handling dark mode
+- Persisting data
+- Managing edit states
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🛣️ Future Enhancements
+
+Potential features to be added:
+- [ ] Categories/Tags for todos
+- [ ] Due dates and reminders
+- [ ] Sorting and filtering options
+- [ ] User authentication
+- [ ] Cloud synchronization
+- [ ] Drag and drop reordering
+- [ ] Search functionality
+- [ ] Bulk actions
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/YourFeature`
+3. Commit changes: `git commit -m 'Add YourFeature'`
+4. Push to branch: `git push origin feature/YourFeature`
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👏 Acknowledgments
+
+- Icons provided by [Lucide Icons](https://lucide.dev/)
+- Design inspired by modern UI/UX practices
+- Built with [React](https://reactjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+
+## 📧 Contact
+
+Your Name - [sejokarizz@gmail.com]
+Project Link: [https://github.com/yourusername/todo-app](https://github.com/Josekariz/GO2COD_WD_01.git)]
+
